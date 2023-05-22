@@ -13,6 +13,7 @@ public class TodoController {
 
     private final TodoService todoService;
 
+    @PostMapping
     public void todoAdd(
             @RequestBody TodoCreateRequest request
     ) {
