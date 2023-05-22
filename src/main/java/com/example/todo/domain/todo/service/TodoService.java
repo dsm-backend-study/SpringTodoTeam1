@@ -17,6 +17,7 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
 
+    @Transactional
     public void addTodo(
             TodoCreateRequest request
     ) {
@@ -26,6 +27,7 @@ public class TodoService {
                         .build());
     }
 
+    @Transactional
     public void modifyTodo(
             Long todoId,
             TodoUpdateRequest request
