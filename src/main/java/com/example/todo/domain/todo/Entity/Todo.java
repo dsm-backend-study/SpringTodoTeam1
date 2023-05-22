@@ -23,6 +23,12 @@ public class Todo {
 
     private boolean isChecked = false;
 
+    public void updateTodo(
+            String content
+    ) {
+        this.content = content;
+    }
+
     @Builder
     public Todo(
             String content,
