@@ -3,6 +3,8 @@ package com.example.todo.domain.todo.service;
 import com.example.todo.domain.todo.Entity.Todo;
 import com.example.todo.domain.todo.controller.dto.request.TodoCreateRequest;
 import com.example.todo.domain.todo.controller.dto.request.TodoUpdateRequest;
+import com.example.todo.domain.todo.controller.dto.response.TodoListResponse;
+import com.example.todo.domain.todo.controller.dto.response.TodoResponse;
 import com.example.todo.domain.todo.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,14 @@ public class TodoService {
         todoRepository.findById(todoId)
                 .orElseThrow()
                 .updateTodo(request.getContent());
+    }
+
+    public TodoListResponse listTodo() {
+        return TodoListResponse.builder()
+                .todoResponseList(todoRepository.findAll()
+                        .stream()
+                        .map(TodoResponse::of)
+                        .toList())
+                .build();
     }
 }
