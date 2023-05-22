@@ -2,6 +2,7 @@ package com.example.todo.domain.todo.controller;
 
 import com.example.todo.domain.todo.controller.dto.request.TodoCreateRequest;
 import com.example.todo.domain.todo.controller.dto.request.TodoUpdateRequest;
+import com.example.todo.domain.todo.controller.dto.response.TodoListResponse;
 import com.example.todo.domain.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +27,10 @@ public class TodoController {
             @RequestBody TodoUpdateRequest request
     ) {
         todoService.modifyTodo(todoId, request);
+    }
+
+    @GetMapping
+    public TodoListResponse todoList() {
+        return todoService.listTodo();
     }
 }
