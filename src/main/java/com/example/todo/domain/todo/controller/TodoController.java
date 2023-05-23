@@ -21,9 +21,9 @@ public class TodoController {
         todoService.addTodo(request);
     }
 
-    @PostMapping("/clickCheck")
-    public void clickCheckBox(@PathVariable long todoId) {
-
+    @PostMapping("/clickCheck/{todoId}")
+    public void clickCheckBox(@PathVariable Long todoId) {
+        todoService.
     }
 
     @PutMapping("/{todoId}")

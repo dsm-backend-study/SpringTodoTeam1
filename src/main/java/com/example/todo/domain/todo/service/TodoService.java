@@ -52,4 +52,10 @@ public class TodoService {
                 .orElseThrow();
         todoRepository.deleteById(todoId);
     }
+
+    public void clickCheckBox(Long todoId) {
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow();
+        todo.clickCheckBox();
+    }
 }

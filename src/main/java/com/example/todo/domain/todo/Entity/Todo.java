@@ -23,6 +23,10 @@ public class Todo {
 
     private boolean isChecked = false;
 
+    public void clickCheckBox() {
+        this.isChecked = !isChecked;
+    }
+
     public void updateTodo(
             String content
     ) {
