@@ -53,6 +53,7 @@ public class TodoService {
         todoRepository.deleteById(todoId);
     }
 
+    @Transactional
     public void clickCheckBox(Long todoId) {
         Todo todo = todoRepository.findById(todoId)
                 .orElseThrow();
