@@ -21,6 +21,11 @@ public class TodoController {
         todoService.addTodo(request);
     }
 
+    @PostMapping("/clickCheck")
+    public void clickCheckBox(@PathVariable long todoId) {
+
+    }
+
     @PutMapping("/{todoId}")
     public void todoModify(
             @PathVariable Long todoId,
@@ -32,5 +37,13 @@ public class TodoController {
     @GetMapping
     public TodoListResponse todoList() {
         return todoService.listTodo();
+    }
+
+
+    @DeleteMapping("/{todoId}")
+    public void todoRemove(
+            @PathVariable long todoId
+    ) {
+        todoService.removeTodo(todoId);
     }
 }

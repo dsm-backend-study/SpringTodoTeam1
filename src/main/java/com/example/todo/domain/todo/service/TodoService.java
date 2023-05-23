@@ -45,4 +45,11 @@ public class TodoService {
                         .toList())
                 .build();
     }
+
+    @Transactional
+    public void removeTodo(Long todoId) {
+        Todo todo = todoRepository.findById(todoId)
+                .orElseThrow();
+        todoRepository.deleteById(todoId);
+    }
 }
