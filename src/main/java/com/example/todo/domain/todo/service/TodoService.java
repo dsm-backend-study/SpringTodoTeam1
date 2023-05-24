@@ -33,7 +33,7 @@ public class TodoService {
                 .orElseThrow()
                 .updateTodo(request.getContent());
     }
-\
+
     @Transactional(readOnly = true)
     public TodoListResponse listTodo() {
         return TodoListResponse.builder()
