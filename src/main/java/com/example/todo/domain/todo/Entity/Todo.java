@@ -23,6 +23,16 @@ public class Todo {
 
     private boolean isChecked = false;
 
+    public void clickCheckBox() {
+        this.isChecked = !isChecked;
+    }
+
+    public void updateTodo(
+            String content
+    ) {
+        this.content = content;
+    }
+
     @Builder
     public Todo(
             String content,
@@ -31,4 +41,5 @@ public class Todo {
         this.content = content;
         this.isChecked = isChecked;
     }
+
 }
