@@ -4,6 +4,7 @@ import com.example.todo.domain.todo.Entity.User;
 import com.example.todo.domain.todo.controller.dto.request.SignUpRequest;
 import com.example.todo.domain.todo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,12 @@ public class UserService {
     public void signup(SignUpRequest request) {
         User user = new User(request.getUsername(),request.getPassword());
         userRepository.save(user);
+    }
+
+    public void removeUser(Long userId) {
+        if (userRepository.existsById(userId)) {
+            throw new NullPointerException();
+        }
+        userRepository.deleteById(userId);
     }
 }

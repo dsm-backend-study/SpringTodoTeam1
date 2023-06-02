@@ -2,7 +2,6 @@ package com.example.todo.domain.todo.controller;
 
 import com.example.todo.domain.todo.controller.dto.request.TodoCreateRequest;
 import com.example.todo.domain.todo.controller.dto.request.TodoUpdateRequest;
-import com.example.todo.domain.todo.controller.dto.request.UserSignUpRequest;
 import com.example.todo.domain.todo.controller.dto.response.TodoListResponse;
 import com.example.todo.domain.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;

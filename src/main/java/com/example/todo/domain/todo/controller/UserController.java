@@ -3,9 +3,7 @@ package com.example.todo.domain.todo.controller;
 import com.example.todo.domain.todo.controller.dto.request.SignUpRequest;
 import com.example.todo.domain.todo.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,4 +18,10 @@ public class UserController {
         userService.signup(request);
     }
 
+    @DeleteMapping("/users/remove")
+    public void remove(
+            @PathVariable Long userId
+    ) {
+        userService.removeUser(userId);
+    }
 }
