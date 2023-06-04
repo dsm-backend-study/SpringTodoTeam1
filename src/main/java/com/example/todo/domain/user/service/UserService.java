@@ -1,11 +1,9 @@
-package com.example.todo.domain.todo.service;
+package com.example.todo.domain.user.service;
 
-import com.example.todo.domain.todo.Entity.User;
-import com.example.todo.domain.todo.controller.dto.request.SignUpRequest;
-import com.example.todo.domain.todo.repository.UserRepository;
+import com.example.todo.domain.user.entity.User;
+import com.example.todo.domain.user.controller.dto.request.SignUpRequest;
+import com.example.todo.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.implementation.bytecode.Throw;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service

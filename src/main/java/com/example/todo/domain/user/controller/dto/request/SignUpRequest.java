@@ -1,4 +1,4 @@
-package com.example.todo.domain.todo.controller.dto.request;
+package com.example.todo.domain.user.controller.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;
