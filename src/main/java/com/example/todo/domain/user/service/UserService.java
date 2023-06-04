@@ -13,7 +13,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     public void signup(SignUpRequest request) {
-        User user = new User(request.getUsername(),request.getPassword());
+        User user = new User(request.getUserId(), request.getUsername(),request.getPassword());
         userRepository.save(user);
     }
 
