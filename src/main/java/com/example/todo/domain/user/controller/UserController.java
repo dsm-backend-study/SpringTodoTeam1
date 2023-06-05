@@ -19,9 +19,7 @@ public class UserController {
         userService.signup(request);
     }
 
-    @DeleteMapping("/users/remove")
-    public void remove(
-    @DeleteMapping("/remove")
+    @DeleteMapping("/remove/{userId}")
     public void removeUser(
             @PathVariable Long userId
     ) {
