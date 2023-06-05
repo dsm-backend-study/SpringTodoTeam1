@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/users/signup")
+    @PostMapping("/signup")
     public void signup(
             @RequestBody SignUpRequest request
     ) {
@@ -20,6 +21,8 @@ public class UserController {
 
     @DeleteMapping("/users/remove")
     public void remove(
+    @DeleteMapping("/remove")
+    public void removeUser(
             @PathVariable Long userId
     ) {
         userService.removeUser(userId);
