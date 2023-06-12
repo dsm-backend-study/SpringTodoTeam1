@@ -8,9 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 @NoArgsConstructor
 @Getter
+@Entity
 public class User {
 
     @Id
@@ -23,6 +23,7 @@ public class User {
 
     private String password;
 
+    @Builder
     public User(String userId, String username, String password) {
         this.userId = userId;
         this.username = username;

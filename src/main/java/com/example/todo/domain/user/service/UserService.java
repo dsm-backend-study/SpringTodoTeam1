@@ -6,14 +6,18 @@ import com.example.todo.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
 
     public void signup(SignUpRequest request) {
-        User user = new User(request.getUserId(), request.getUsername(),request.getPassword());
+        User user = User.builder()
+                .userId(request.getUserId())
+                .username(request.getUsername())
+                .password(request.getPassword())
+                .build();
         userRepository.save(user);
     }
 
