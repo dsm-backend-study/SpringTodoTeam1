@@ -1,7 +1,7 @@
 package com.example.todo.domain.user.service;
 
+import com.example.todo.domain.user.controller.dto.request.*;
 import com.example.todo.domain.user.entity.User;
-import com.example.todo.domain.user.controller.dto.request.SignUpRequest;
 import com.example.todo.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,5 +26,18 @@ public class UserService {
             throw new NullPointerException();
         }
         userRepository.deleteById(userId);
+    }
+
+    public void modifyUser(
+            Long userId,
+            UserUpdateRequest request
+    ) {
+        User user = userRepository.findById(userId)
+                .orElseThrow();
+
+        user.updateUser(
+                request.getUserId(),
+                request.getUsername(),
+                request.getPassword());
     }
 }

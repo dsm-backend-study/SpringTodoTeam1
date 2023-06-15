@@ -1,5 +1,6 @@
 package com.example.todo.domain.user.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,6 +23,16 @@ public class User {
     private String username;
 
     private String password;
+
+    public void updateUser(
+            String userId,
+            String username,
+            String password
+    ) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+    }
 
     @Builder
     public User(String userId, String username, String password) {
