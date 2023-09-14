@@ -1,6 +1,6 @@
 package com.example.todo.domain.user.controller;
 
-import com.example.todo.domain.user.controller.dto.request.SignUpRequest;
+import com.example.todo.domain.user.controller.dto.request.*;
 import com.example.todo.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +24,13 @@ public class UserController {
             @PathVariable Long userId
     ) {
         userService.removeUser(userId);
+    }
+
+    @PutMapping("/modify/{userId}")
+    public void userModify(
+            @PathVariable Long userId,
+            @RequestBody UserUpdateRequest request
+    ) {
+        userService.modifyUser(userId, request);
     }
 }
