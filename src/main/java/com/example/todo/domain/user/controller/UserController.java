@@ -2,7 +2,9 @@ package com.example.todo.domain.user.controller;
 
 import com.example.todo.domain.user.controller.dto.request.*;
 import com.example.todo.domain.user.service.UserService;
+import com.example.todo.security.jwt.dto.TokenResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +19,13 @@ public class UserController {
             @RequestBody SignUpRequest request
     ) {
         userService.signup(request);
+    }
+
+    @PostMapping("/login")
+    public TokenResponse login(
+            @RequestBody @Validated LoginRequest request
+    ) {
+        return userService.login(request);
     }
 
     @DeleteMapping("/remove/{userId}")
